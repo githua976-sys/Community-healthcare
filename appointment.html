@@ -1,34 +1,80 @@
-<!-- ===================== appointment.html ===================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Appointment</title>
 </head>
-<body>
+
+<body class="bg-gray-50">
+
+<!-- Navbar -->
 <nav class="bg-blue-600 p-4 text-white flex justify-between">
-  <h1>Care Hospital</h1>
+  <h1 class="font-bold">Care Hospital</h1>
   <div class="space-x-4">
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="doctors.html">Doctors</a>
     <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<section class="flex justify-center items-center h-screen">
-  <form class="bg-white p-6 rounded-xl shadow w-80 space-y-4">
-    <input type="text" placeholder="Name" class="w-full p-2 border rounded">
-    <input type="text" placeholder="Phone" class="w-full p-2 border rounded">
-    <select class="w-full p-2 border rounded">
-      <option>Department</option>
-      <option>Pediatrics</option>
-      <option>Surgery</option>
-    </select>
-    <input type="date" class="w-full p-2 border rounded">
-    <button class="bg-blue-600 text-white w-full py-2 rounded">Submit</button>
-  </form>
+<!-- Appointment Section -->
+<section class="flex flex-col justify-center items-center py-16 px-4">
+
+  <!-- Heading -->
+  <h2 class="text-4xl font-bold text-blue-600 mb-2 text-center">
+    Book an Appointment
+  </h2>
+
+  <p class="text-gray-600 mb-8 text-center">
+    Fill in your details and our team will contact you shortly.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-10 max-w-4xl w-full">
+
+    <!-- Form -->
+    <form class="bg-white p-6 rounded-2xl shadow space-y-4">
+      <input type="text" placeholder="Full Name" class="w-full p-3 border rounded-lg">
+      <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-lg">
+
+      <select class="w-full p-3 border rounded-lg">
+        <option>Select Department</option>
+        <option>General Consultation</option>
+        <option>Pediatrics</option>
+        <option>Surgery</option>
+        <option>Maternal Health</option>
+      </select>
+
+      <input type="date" class="w-full p-3 border rounded-lg">
+
+      <button class="bg-blue-600 text-white w-full py-3 rounded-lg hover:bg-blue-700 transition">
+        Submit Appointment
+      </button>
+    </form>
+
+    <!-- Extra Info -->
+    <div class="bg-blue-100 p-6 rounded-2xl">
+      <h3 class="text-xl font-bold mb-4">Hospital Hours</h3>
+      <p class="mb-2">🕒 Monday - Friday: 8:00 AM - 6:00 PM</p>
+      <p class="mb-2">🕒 Saturday: 9:00 AM - 4:00 PM</p>
+      <p class="mb-4">❌ Sunday: Closed</p>
+
+      <div class="bg-white p-4 rounded-xl shadow">
+        <p class="font-bold text-red-600">🚑 Emergency Available 24/7</p>
+      </div>
+    </div>
+
+  </div>
+
 </section>
+
+<!-- Footer -->
+<footer class="bg-blue-600 text-white text-center p-4 mt-10">
+  <p>© 2026 Care Hospital. All rights reserved.</p>
+</footer>
+
 </body>
 </html>

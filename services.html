@@ -3,58 +3,123 @@
 <head>
   <meta charset="UTF-8">
   <script src="https://cdn.tailwindcss.com"></script>
-<title>services</title>
+  <title>Services | Care Hospital</title>
 </head>
-<body>
+
+<body class="bg-gray-100">
+
+<!-- Navbar -->
 <nav class="bg-blue-600 p-4 text-white flex justify-between">
-  <h1>Care Hospital</h1>
+  <h1 class="font-bold text-lg">Care Hospital</h1>
   <div class="space-x-4">
     <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
+    <a href="services.html" class="underline">Services</a>
     <a href="doctors.html">Doctors</a>
     <a href="appointment.html">Appointment</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
-<!-- Services Section -->
-<section class="grid md:grid-cols-3 gap-6 p-6">
-  <div class="bg-white p-4 rounded-xl shadow">General Consultation</div>
-  <div class="bg-white p-4 rounded-xl shadow">Maternal Health</div>
-  <div class="bg-white p-4 rounded-xl shadow">Emergency Care</div>
+
+<!-- Intro -->
+<section class="p-10 text-center bg-white">
+  <h2 class="text-4xl font-bold mb-4">Our Medical Services</h2>
+  <p class="text-gray-600 max-w-2xl mx-auto">
+    We provide high-quality healthcare services with a focus on patient care,
+    advanced treatment, and professional excellence.
+  </p>
 </section>
-<section class="p-10 bg-gray-100">
-  <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
-    <section class="grid md:grid-cols-3 gap-8">
- <!-- Service 1 -->
-    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-      <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118" 
-           alt="Consultation" class="w-full h-40 object-cover">
-      <div class="p-6 text-center">
-        <div class="text-3xl mb-2">🩺</div>
-        <h3 class="font-bold text-lg mb-2">General Consultation</h3>
-        <p class="text-gray-600">Professional diagnosis and treatment for all patients.</p>
+
+<!-- Search -->
+<section class="p-6 bg-gray-100">
+  <input 
+    type="text" 
+    id="searchService" 
+    placeholder="Search services..." 
+    class="w-full p-3 border rounded-lg"
+  >
+</section>
+
+<!-- Services -->
+<section class="p-10 grid md:grid-cols-3 gap-8">
+
+  <div class="service bg-white rounded-2xl shadow-lg">
+     <img src="general consultation.jpg" alt="Consultation" class="w-full h-40 object-cover">
+    <div class="p-6">
+      <h3 class="service-name font-bold text-lg mb-2">General Consultation</h3>
+      <p class="text-gray-600 mb-3">Diagnosis and treatment for common illnesses.</p>
+      <a href="appointment.html?service=General Consultation"
+         class="block text-center bg-blue-600 text-white px-4 py-2 rounded">
+         Schedule Appointment
+      </a>
+    </div>
+  </div>
+
+  <div class="service bg-white rounded-2xl shadow-lg">
+    <img src="maternity.png.jpg" alt="Maternity" class="w-full h-40 object-cover">
+    <div class="p-6">
+      <h3 class="service-name font-bold text-lg mb-2">Maternal Health</h3>
+      <p class="text-gray-600 mb-3">Care for mothers before and after birth.</p>
+      <a href="appointment.html?service=Maternal Health"
+         class="block text-center bg-blue-600 text-white px-4 py-2 rounded">
+         Schedule Appointment
+      </a>
+    </div>
+  </div>
+
+  <div class="service bg-white rounded-2xl shadow-lg">
+    <img src="Ambulance.png.jpg" alt="Emergency" class="w-full h-40 object-cover">
+    <div class="p-6">
+      <h3 class="service-name font-bold text-lg mb-2">Emergency Care</h3>
+      <p class="text-gray-600 mb-3">24/7 urgent medical attention.</p>
+      <a href="appointment.html?service=Emergency Care"
+         class="block text-center bg-blue-600 text-white px-4 py-2 rounded">
+         Schedule Appointment
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- JS FILE -->
+<script src="services.js"></script>
+
+</body>
+</html>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+
+    <div class="footer-brand">
+      <h2>HealthCare</h2>
+      <p>Reliable health & nutrition information for everyone.</p>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Explore</h4>
+        <a href="#">Conditions</a>
+        <a href="#">Nutrition</a>
+        <a href="#">Lifestyle</a>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
       </div>
     </div>
 
-    <!-- Service 2 -->
-    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" 
-           alt="Maternal Health" class="w-full h-40 object-cover">
-      <div class="p-6 text-center">
-        <div class="text-3xl mb-2">🤰</div>
-        <h3 class="font-bold text-lg mb-2">Maternal Health</h3>
-        <p class="text-gray-600">Comprehensive care for mothers and newborns.</p>
-      </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>Email: info@healthcare.com</p>
+      <p>Phone: +254 700 000 000</p>
     </div>
 
-    <!-- Service 3 -->
-    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-      <img src="/Ambulance.png.jpg" 
-           alt="Emergency" class="w-full h-40 object-cover">
-      <div class="p-6 text-center">
-        <div class="text-3xl mb-2">🚑</div>
-        <h3 class="font-bold text-lg mb-2">Emergency Care</h3>
-        <p class="text-gray-600">24/7 urgent medical services when you need them most.</p>
-      </div>
-    </div>
-    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 HealthCare. All rights reserved.</p>
+  </div>
+</footer>
