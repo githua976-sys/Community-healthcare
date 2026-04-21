@@ -2,6 +2,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const searchInput = document.getElementById("searchInput");
+
+  if (!searchInput) {
+    console.log("Search input not found");
+    return;
+  }
+
   const doctors = document.querySelectorAll(".doctor-card");
 
   searchInput.addEventListener("input", function () {
@@ -10,9 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     doctors.forEach(function (doctor) {
 
-      const name = doctor.getAttribute("data-name").toLowerCase();
+      const name = (doctor.getAttribute("data-name") || "").toLowerCase();
 
-      if (name.includes(value)) {
+      if (name.indexOf(value) !== -1) {
         doctor.style.display = "";
       } else {
         doctor.style.display = "none";
