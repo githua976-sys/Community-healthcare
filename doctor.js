@@ -1,28 +1,25 @@
 // SEARCH DOCTORS
-const searchInput = document.getElementById("searchInput");
-const doctors = document.querySelectorAll(".doctor-card");
+document.addEventListener("DOMContentLoaded", function () {
 
-searchInput.addEventListener("input", function () {
-  const value = this.value.toLowerCase();
+  const searchInput = document.getElementById("searchInput");
+  const doctors = document.querySelectorAll(".doctor-card");
 
-  doctors.forEach(doctor => {
-    const name = doctor.getAttribute("data-name").toLowerCase();
+  searchInput.addEventListener("input", function () {
 
-    if (name.includes(value)) {
-      doctor.classList.remove("hidden");
-    } else {
-      doctor.classList.add("hidden");
-    }
+    const value = searchInput.value.toLowerCase();
+
+    doctors.forEach(function (doctor) {
+
+      const name = doctor.getAttribute("data-name").toLowerCase();
+
+      if (name.includes(value)) {
+        doctor.style.display = "";
+      } else {
+        doctor.style.display = "none";
+      }
+
+    });
+
   });
-});
 
-
-// STORE SELECTED DOCTOR
-const buttons = document.querySelectorAll(".book-btn");
-
-buttons.forEach(btn => {
-  btn.addEventListener("click", function () {
-    const doctorName = this.getAttribute("data-doctor");
-    localStorage.setItem("selectedDoctor", doctorName);
-  });
 });
