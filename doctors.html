@@ -22,113 +22,112 @@
 
 <!-- HERO -->
 <section class="bg-blue-700 text-white text-center py-16">
-  <h1 class="text-4xl font-bold mb-4">Our Medical Specialists</h1>
-  <p class="text-lg max-w-2xl mx-auto">
-    Meet our experienced doctors dedicated to quality healthcare.
-  </p>
+  <h1 class="text-4xl font-bold mb-3">Our Medical Specialists</h1>
+  <p class="text-lg">Qualified doctors ready to serve you</p>
 </section>
 
 <!-- SEARCH -->
-<div class="max-w-4xl mx-auto mt-10 px-6">
+<div class="max-w-3xl mx-auto mt-10 px-6">
   <input 
-    type="text" 
-    placeholder="Search doctor..."
-    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-  >
+    id="searchInput"
+    type="text"
+    placeholder="Search doctor by name or specialty..."
+    class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
+  />
 </div>
 
-<!-- DOCTORS LIST -->
-<div class="py-16 px-6 flex-grow">
-  <ul class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<!-- DOCTORS -->
+<section class="py-16 px-6 flex-grow">
+  <div class="max-w-6xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-    <!-- Doctor 1 -->
-    <li class="bg-white p-5 rounded-lg shadow relative">
+    <!-- DOCTOR 1 -->
+    <div class="doctor-card bg-white p-5 rounded-lg shadow relative" data-name="dr nyambura pediatrician">
       <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">1</span>
-      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256&h=256&fit=facearea"
-           class="w-20 h-20 rounded-full mx-auto mb-4">
+
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256"
+           class="w-20 h-20 rounded-full mx-auto mb-3">
+
       <h3 class="text-center font-semibold">Dr. Nyambura</h3>
-      <p class="text-center text-sm text-blue-600">Pediatrician</p>
-      <p class="text-center text-xs text-gray-500">5+ years experience</p>
+      <p class="text-center text-blue-600 text-sm">Pediatrician</p>
 
       <a href="appointment.html"
-         class="block mt-4 text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-         Book Appointment
+         class="book-btn block mt-4 text-center bg-blue-600 text-white py-2 rounded"
+         data-doctor="Dr. Nyambura">
+        Book Appointment
       </a>
-    </li>
+    </div>
 
-    <!-- Doctor 2 -->
-    <li class="bg-white p-5 rounded-lg shadow relative">
+    <!-- DOCTOR 2 -->
+    <div class="doctor-card bg-white p-5 rounded-lg shadow relative" data-name="dr nelson surgeon">
       <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">2</span>
-      <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=256&h=256&fit=facearea"
-           class="w-20 h-20 rounded-full mx-auto mb-4">
+
+      <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=256"
+           class="w-20 h-20 rounded-full mx-auto mb-3">
+
       <h3 class="text-center font-semibold">Dr. Nelson</h3>
-      <p class="text-center text-sm text-blue-600">Surgeon</p>
-      <p class="text-center text-xs text-gray-500">8+ years experience</p>
+      <p class="text-center text-blue-600 text-sm">Surgeon</p>
 
       <a href="appointment.html"
-         class="block mt-4 text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-         Book Appointment
+         class="book-btn block mt-4 text-center bg-blue-600 text-white py-2 rounded"
+         data-doctor="Dr. Nelson">
+        Book Appointment
       </a>
-    </li>
+    </div>
 
-    <!-- Doctor 3 -->
-    <li class="bg-white p-5 rounded-lg shadow relative">
+    <!-- DOCTOR 3 -->
+    <div class="doctor-card bg-white p-5 rounded-lg shadow relative" data-name="dr antony dentist">
       <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">3</span>
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256&h=256&fit=facearea"
-           class="w-20 h-20 rounded-full mx-auto mb-4">
+
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256"
+           class="w-20 h-20 rounded-full mx-auto mb-3">
+
       <h3 class="text-center font-semibold">Dr. Antony</h3>
-      <p class="text-center text-sm text-blue-600">Dentist</p>
-      <p class="text-center text-xs text-gray-500">6+ years experience</p>
+      <p class="text-center text-blue-600 text-sm">Dentist</p>
 
       <a href="appointment.html"
-         class="block mt-4 text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-         Book Appointment
+         class="book-btn block mt-4 text-center bg-blue-600 text-white py-2 rounded"
+         data-doctor="Dr. Antony">
+        Book Appointment
       </a>
-    </li>
+    </div>
 
-    <!-- Doctor 4 -->
-    <li class="bg-white p-5 rounded-lg shadow relative">
+    <!-- DOCTOR 4 -->
+    <div class="doctor-card bg-white p-5 rounded-lg shadow relative" data-name="dr debra optician">
       <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-1 rounded-full">4</span>
-      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=256&h=256&fit=facearea"
-           class="w-20 h-20 rounded-full mx-auto mb-4">
+
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=256"
+           class="w-20 h-20 rounded-full mx-auto mb-3">
+
       <h3 class="text-center font-semibold">Dr. Debra</h3>
-      <p class="text-center text-sm text-blue-600">Optician</p>
-      <p class="text-center text-xs text-gray-500">4+ years experience</p>
+      <p class="text-center text-blue-600 text-sm">Optician</p>
 
       <a href="appointment.html"
-         class="block mt-4 text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-         Book Appointment
+         class="book-btn block mt-4 text-center bg-blue-600 text-white py-2 rounded"
+         data-doctor="Dr. Debra">
+        Book Appointment
       </a>
-    </li>
+    </div>
 
-  </ul>
-</div>
+  </div>
+</section>
 
 <!-- WHY SECTION -->
 <section class="bg-gray-100 py-16">
-  <div class="max-w-6xl mx-auto text-center px-6">
+  <div class="max-w-5xl mx-auto text-center px-6">
     <h2 class="text-2xl font-bold mb-10">Why Choose Our Doctors?</h2>
 
     <div class="grid md:grid-cols-3 gap-8">
       <div>
-        <h3 class="font-semibold">Qualified Experts</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Certified professionals with experience.
-        </p>
+        <h3 class="font-semibold">Experts</h3>
+        <p class="text-sm text-gray-600">Certified professionals</p>
       </div>
-
       <div>
-        <h3 class="font-semibold">Modern Equipment</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          Advanced tools for accurate treatment.
-        </p>
+        <h3 class="font-semibold">Modern Tools</h3>
+        <p class="text-sm text-gray-600">Advanced medical equipment</p>
       </div>
-
       <div>
-        <h3 class="font-semibold">Patient Care</h3>
-        <p class="text-sm text-gray-600 mt-2">
-          We focus on comfort and personalized care.
-        </p>
+        <h3 class="font-semibold">Care</h3>
+        <p class="text-sm text-gray-600">Patient-focused service</p>
       </div>
     </div>
   </div>
@@ -142,34 +141,30 @@
     <div>
       <h2 class="text-xl font-bold">Care Hospital</h2>
       <p class="text-gray-300 text-sm mt-2">
-        Trusted healthcare services for you and your family.
+        Quality healthcare you can trust.
       </p>
     </div>
 
     <div>
       <h4 class="font-semibold mb-3">Quick Links</h4>
-      <a href="index.html" class="block text-gray-300 text-sm hover:text-blue-400">Home</a>
-      <a href="services.html" class="block text-gray-300 text-sm hover:text-blue-400">Services</a>
-      <a href="doctors.html" class="block text-gray-300 text-sm hover:text-blue-400">Doctors</a>
-      <a href="appointment.html" class="block text-gray-300 text-sm hover:text-blue-400">Appointment</a>
-      <a href="contact.html" class="block text-gray-300 text-sm hover:text-blue-400">Contact</a>
-    </div>
-
-    <div>
-      <h4 class="font-semibold mb-3">Contact</h4>
-      <p class="text-gray-300 text-sm">Email: info@carehospital.com</p>
-      <p class="text-gray-300 text-sm">Phone: +254 700 000 000</p>
+      <a href="index.html" class="block text-gray-300 text-sm">Home</a>
+      <a href="services.html" class="block text-gray-300 text-sm">Services</a>
+      <a href="doctors.html" class="block text-gray-300 text-sm">Doctors</a>
+      <a href="appointment.html" class="block text-gray-300 text-sm">Appointment</a>
+      <a href="contact.html" class="block text-gray-300 text-sm">Contact</a>
     </div>
 
   </div>
 
   <div class="border-t border-white/20 mt-8 pt-4 text-center text-sm text-gray-300">
-    &copy; 2026 Care Hospital. All rights reserved.
+    &copy; 2026 Care Hospital
   </div>
 
 </footer>
 
+<!-- JS -->
+<script src="script.js"></script>
+
 </body>
 </html>
-
 
