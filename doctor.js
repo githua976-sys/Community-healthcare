@@ -2,16 +2,16 @@
 const searchInput = document.getElementById("searchInput");
 const doctors = document.querySelectorAll(".doctor-card");
 
-searchInput.addEventListener("keyup", function () {
+searchInput.addEventListener("input", function () {
   const value = this.value.toLowerCase();
 
   doctors.forEach(doctor => {
-    const name = doctor.getAttribute("data-name");
+    const name = doctor.getAttribute("data-name").toLowerCase();
 
     if (name.includes(value)) {
-      doctor.style.display = "block";
+      doctor.classList.remove("hidden");
     } else {
-      doctor.style.display = "none";
+      doctor.classList.add("hidden");
     }
   });
 });
