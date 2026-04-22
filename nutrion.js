@@ -1,28 +1,35 @@
 function getNutrition() {
-  console.log("Button clicked"); 
-
   let food = document.getElementById("foodInput").value;
-  console.log(food);
-}
+
+  if (food === "") {
+    document.getElementById("result").innerHTML = "Please enter a food item";
+    return;
+  }
 
   $.ajax({
-    url: "https://api.api-ninjas.com/v1/nutrition?query=" + food,
-    method: "GET",
-    headers: {
-      "X-Api-Key": "`https://api.api-ninjas.com/v1/nutrition?query=${food}`",
+    url: "https://api.api-ninjas.com/v1/nutrition",
+    type: "GET",
+    data: {
+      query: food
     },
-     success: function(data) {
+    headers: {
+      "X-Api-Key": "xayGaWWNgDF76bib3xFgvcFPlbPg77I2nLvE5smB"
+    },
+    contentType: "application/json",
+
+    success: function (data) {
       if (data.length > 0) {
         document.getElementById("result").innerHTML =
-          "Calories: " + data[0].calories +
-          " | Protein: " + data[0].protein_g + "g" +
-          " | Fat: " + data[0].fat_total_g + "g";
+          "Calories: " + data[0].calories;
       } else {
-        document.getElementById("result").innerHTML = "No data found";
+        document.getElementById("result").innerHTML =
+          "No nutrition data found";
       }
     },
 
-    error: function() {
-      document.getElementById("result").innerHTML = "Error fetching data";
+    error: function () {
+      document.getElementById("result").innerHTML =
+        "Error fetching data";
     }
   });
+}
