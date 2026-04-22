@@ -11,7 +11,7 @@ function getNutrition() {
     type: "GET",
     data: { query: food },
     headers: {
-      "X-Api-Key": "YOUR_API_KEY"
+      "X-Api-Key": "xayGaWWNgDF76bib3xFgvcFPlbPg77I2nLvE5smB"
     },
 
     success: function (data) {
