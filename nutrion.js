@@ -9,7 +9,7 @@ function getNutrition() {
     url: "https://api.api-ninjas.com/v1/nutrition?query=" + food,
     method: "GET",
     headers: {
-      "X-Api-Key": "YOUR_API_KEY"
+      "X-Api-Key": "`https://api.api-ninjas.com/v1/nutrition?query=${food}`",
     },
      success: function(data) {
       if (data.length > 0) {
