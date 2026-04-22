@@ -1,34 +1,43 @@
-function getNutrition() {
-  let food = document.getElementById("foodInput").value;
+async function getNutrition() {
+  const food = document.getElementById("foodInput").value;
 
-  if (food === "") {
-    document.getElementById("result").innerHTML = "Enter a food item";
+  const resultDiv = document.getElementById("result");
+
+  if (!food) {
+    resultDiv.textContent = "Please enter a food name";
     return;
   }
 
-  $.ajax({
-    url: "https://api.api-ninjas.com/v1/nutrition",
-    type: "GET",
-    data: { query: food },
-    headers: {
-      "X-Api-Key": "xayGaWWNgDF76bib3xFgvcFPlbPg77I2nLvE5smB"
-    },
-
-    success: function (data) {
-      console.log(data); // IMPORTANT for debugging
-
-      if (data && data.length > 0) {
-        document.getElementById("result").innerHTML =
-          "Calories: " + data[0].calories;
-      } else {
-        document.getElementById("result").innerHTML =
-          "No results found";
+  try {
+    const response = await fetch(
+      `https://api.api-ninjas.com/v1/nutrition?query=${food}`,
+      {
+        method: "GET",
+        headers: {
+          "X-Api-Key": "YOUR_API_KEY"
+        }
       }
-    },
+    );
 
-    error: function () {
-      document.getElementById("result").innerHTML =
-        "API error or network issue";
+    if (!response.ok) {
+      resultDiv.textContent = "API error. Try again later.";
+      return;
     }
-  });
+
+    const data = await response.json();
+
+    if (!data || data.length === 0) {
+      resultDiv.textContent = "No nutrition data found";
+      return;
+    }
+
+    const fat = data[0].fat_total_g;
+
+    resultDiv.textContent = `Fat: ${fat} g`;
+
+  } catch (error) {
+    console.error(error);
+    resultDiv.textContent = "Something went wrong";
+  }
 }
+   
