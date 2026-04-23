@@ -54,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     container.innerHTML = html;
   }
 
-  // LOAD ALL
-  displayDoctors(doctorsList);
+  
 
   // SEARCH
   document.getElementById("searchDoctor").addEventListener("keyup", function () {
