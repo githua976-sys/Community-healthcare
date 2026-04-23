@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  // ===============================
+  
   // OOP CLASS
-  // ===============================
-  class Doctor {
+   class Doctor {
     constructor(name, specialization, image) {
       this.name = name;
       this.specialization = specialization;
@@ -30,10 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // ===============================
+
   // DATA
-  // ===============================
-  const doctorsList = [
+   const doctorsList = [
     new Doctor("Dr. Nyambura", "Pediatrician", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256"),
     new Doctor("Dr. Nelson", "Surgeon", "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=256"),
     new Doctor("Dr. Antony", "Dentist", "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256"),
@@ -46,10 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const container = document.getElementById("doctorContainer");
 
-  // ===============================
-  // DISPLAY FUNCTION
-  // ===============================
-  function displayDoctors(list) {
+
+  // DISPLAY FUNCTION  
+   function displayDoctors(list) {
     container.innerHTML = "";
     list.forEach(doc => {
       container.innerHTML += doc.createCard();
@@ -59,10 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load all
   displayDoctors(doctorsList);
 
-  // ===============================
+  
   // SEARCH
-  // ===============================
-  document.getElementById("searchDoctor").addEventListener("keyup", function () {
+   document.getElementById("searchDoctor").addEventListener("keyup", function () {
     let value = this.value.toLowerCase();
 
     let filtered = doctorsList.filter(doc =>
@@ -73,10 +69,9 @@ document.addEventListener("DOMContentLoaded", function () {
     displayDoctors(filtered);
   });
 
-  // ===============================
+
   // FILTER BUTTONS
-  // ===============================
-  document.querySelectorAll("[data-filter]").forEach(btn => {
+ document.querySelectorAll("[data-filter]").forEach(btn => {
     btn.addEventListener("click", function () {
 
       let filter = this.getAttribute("data-filter");
