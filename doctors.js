@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  
   // OOP CLASS
-   class Doctor {
+  class Doctor {
     constructor(name, specialization, image) {
       this.name = name;
       this.specialization = specialization;
@@ -15,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
              data-name="${this.name.toLowerCase()} ${this.specialization.toLowerCase()}">
 
           <img src="${this.image}"
+               onerror="this.src='https://via.placeholder.com/80'"
                class="w-20 h-20 rounded-full mx-auto mb-3">
 
           <h3 class="text-center font-semibold">${this.name}</h3>
@@ -29,36 +29,36 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
   // DATA
-   const doctorsList = [
+  const doctorsList = [
     new Doctor("Dr. Nyambura", "Pediatrician", "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256"),
     new Doctor("Dr. Nelson", "Surgeon", "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?w=256"),
     new Doctor("Dr. Antony", "Dentist", "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256"),
     new Doctor("Dr. Debra", "Optician", "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=256"),
     new Doctor("Dr. Aisha", "Gynecologist", "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=256"),
     new Doctor("Dr. Brian", "Cardiologist", "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=256"),
-    new Doctor("Dr. Faith", "Neurologist", "https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=256"),
+    new Doctor("Dr. Faith", "Neurologist", "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=256"),
     new Doctor("Dr. James", "Dermatologist", "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=256")
   ];
 
   const container = document.getElementById("doctorContainer");
 
+  // DISPLAY FUNCTION (FIXED)
+  function displayDoctors(list) {
+    let html = "";
 
-  // DISPLAY FUNCTION  
-   function displayDoctors(list) {
-    container.innerHTML = "";
     list.forEach(doc => {
-      container.innerHTML += doc.createCard();
+      html += doc.createCard();
     });
+
+    container.innerHTML = html;
   }
 
-  // Load all
+  // LOAD ALL
   displayDoctors(doctorsList);
 
-  
   // SEARCH
-   document.getElementById("searchDoctor").addEventListener("keyup", function () {
+  document.getElementById("searchDoctor").addEventListener("keyup", function () {
     let value = this.value.toLowerCase();
 
     let filtered = doctorsList.filter(doc =>
@@ -69,9 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
     displayDoctors(filtered);
   });
 
-
   // FILTER BUTTONS
- document.querySelectorAll("[data-filter]").forEach(btn => {
+  document.querySelectorAll("[data-filter]").forEach(btn => {
     btn.addEventListener("click", function () {
 
       let filter = this.getAttribute("data-filter");
