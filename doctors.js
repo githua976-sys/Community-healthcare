@@ -1,7 +1,4 @@
-// PROTECT PAGE 
-if (localStorage.getItem("isLoggedIn") !== "true") {
-  window.location.href = "login.html";
-}
+
 
 document.addEventListener("DOMContentLoaded", function () { 
 
