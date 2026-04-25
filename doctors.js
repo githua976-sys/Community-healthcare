@@ -81,7 +81,10 @@ let logoutBtn = document.getElementById("logoutBtn");
   
 
   // SEARCH
-  document.getElementById("searchDoctor").addEventListener("keyup", function () {
+  let searchInput = document.getElementById("searchDoctor");
+
+if (searchInput) {
+  searchInput.addEventListener("keyup", function () {
     let value = this.value.toLowerCase();
 
     let filtered = doctorsList.filter(doc =>
@@ -91,6 +94,7 @@ let logoutBtn = document.getElementById("logoutBtn");
 
     displayDoctors(filtered);
   });
+}
 
   // FILTER BUTTONS
   document.querySelectorAll("[data-filter]").forEach(btn => {
