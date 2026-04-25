@@ -9,18 +9,47 @@
 <body class="bg-gray-100">
 
 <!-- Navbar -->
-<nav class="bg-blue-600 p-4 text-white flex justify-around">
-  <h1 class="font-bold text-lg">Care Hospital</h1>
-  <div class="space-x-4">
+<nav class="bg-blue-600 p-4 text-white flex items-center">
+
+  <!-- LEFT: LOGO -->
+  <h1 class="font-bold">Care Hospital</h1>
+
+  <!-- MIDDLE: LINKS -->
+  <div class="space-x-4 ml-10">
     <a href="index.html">Home</a>
-    <a href="services.html" class="underline">Services</a>
+    <a href="services.html">Services</a>
     <a href="doctors.html">Doctors</a>
     <a href="appointment.html">Appointment</a>
     <a href="contact.html">Contact</a>
-    <a href="login.html" class="bg-blue-900 py-2 px-2 rounded-md hover:bg-white hover:text-blue-600">Login</a>
   </div>
-</nav>
 
+  <!-- RIGHT: ACCOUNT -->
+  <div class="relative ml-auto">
+
+    <!-- ICON -->
+    <button id="accountIcon" class="text-2xl">
+      👤
+    </button>
+
+    <!-- DROPDOWN -->
+    <div id="accountMenu"
+         class="hidden absolute right-0 mt-2 w-40 bg-white text-black shadow-lg rounded-lg z-50">
+
+      <button id="loginOption"
+        class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+        Login
+      </button>
+
+      <button id="logoutOption"
+        class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+</nav>
 <!-- Intro -->
 <section class="p-10 text-center bg-white">
   <h2 class="text-4xl font-bold mb-4">Our Medical Services</h2>
