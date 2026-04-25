@@ -13,7 +13,7 @@ let logoutBtn = document.getElementById("logoutBtn");
     }
 
     logoutBtn.addEventListener("click", function () {
-      alert("Logging out..."); // 👈 TEST
+      alert("Logging out..."); 
       localStorage.removeItem("isLoggedIn");
       window.location.href = "login.html";
     });
