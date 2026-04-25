@@ -112,21 +112,30 @@ let logoutBtn = document.getElementById("logoutBtn");
     });
   });
 
-// HANDLE BOOK BUTTON CLICK
-document.addEventListener("click", function(e) {
+  // HANDLE BOOK BUTTON CLICK
+document.addEventListener("click", function (e) {
 
   if (e.target.classList.contains("book-btn")) {
 
+    let doctorName = e.target.getAttribute("data-doctor");
     let isLoggedIn = localStorage.getItem("isLoggedIn");
 
     if (isLoggedIn === "true") {
-  let doctorName = e.target.getAttribute("data-doctor");
 
-  localStorage.setItem("selectedDoctor", doctorName);
+      // Save selected doctor
+      localStorage.setItem("selectedDoctor", doctorName);
 
-  window.location.href = "appointment.html";
+      // Go to appointment page
+      window.location.href = "appointment.html";
+
     } else {
-      alert("Please log in to book an appointment.");
+
+      // Save doctor BEFORE redirecting
+      localStorage.setItem("selectedDoctor", doctorName);
+
+      alert("Please log in first to book an appointment.");
+
+      // Redirect to login
       window.location.href = "login.html";
     }
   }
