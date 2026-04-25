@@ -1,17 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchService");
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  searchInput.addEventListener("input", function () {
-    const value = this.value.toLowerCase();
-    const services = document.querySelectorAll(".service");
+  let name = document.querySelector("input[type='text']").value;
+  let email = document.querySelector("input[type='email']").value;
+  let message = document.querySelector("textarea").value;
 
-    services.forEach(service => {
-      const name = service
-        .querySelector(".service-name")
-        .textContent
-        .toLowerCase();
+  // validation
+  if (!name || !email || !message) {
+    alert("Please fill all fields");
+    return;
+  }
 
-      service.style.display = name.includes(value) ? "block" : "none";
-    });
-  });
+  let contactData = {
+    name: name,
+    email: email,
+    message: message
+  };
+
+  // save to localStorage (demo purpose)
+  localStorage.setItem("contactMessage", JSON.stringify(contactData));
+
+  // show success message
+  document.getElementById("successMsg").classList.remove("hidden");
+
+  // clear form
+  document.getElementById("contactForm").reset();
 });
