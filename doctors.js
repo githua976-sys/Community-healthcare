@@ -1,26 +1,43 @@
+document.addEventListener("DOMContentLoaded", function () {
 
+  const accountIcon = document.getElementById("accountIcon");
+  const accountMenu = document.getElementById("accountMenu");
+  const loginOption = document.getElementById("loginOption");
+  const logoutOption = document.getElementById("logoutOption");
 
-document.addEventListener("DOMContentLoaded", function () { 
+  if (!accountIcon) return;
 
-let logoutBtn = document.getElementById("logoutBtn");
+  // TOGGLE MENU
+  accountIcon.addEventListener("click", () => {
+    accountMenu.classList.toggle("hidden");
+  });
 
-  console.log(logoutBtn); // 👈 CHECK THIS
+  // UPDATE MENU
+  function updateMenu() {
+    let isLoggedIn = localStorage.getItem("isLoggedIn");
 
-  if (logoutBtn) {
-
-    if (localStorage.getItem("isLoggedIn") === "true") {
-      logoutBtn.style.display = "block"; 
+    if (isLoggedIn === "true") {
+      loginOption.style.display = "none";
+      logoutOption.style.display = "block";
+    } else {
+      loginOption.style.display = "block";
+      logoutOption.style.display = "none";
     }
-
-    logoutBtn.addEventListener("click", function () {
-      alert("Logging out..."); 
-      localStorage.removeItem("isLoggedIn");
-      window.location.href = "login.html";
-    });
-
-  } else {
-    console.log("Logout button NOT found");
   }
+
+  updateMenu();
+
+  // LOGIN CLICK
+  loginOption.addEventListener("click", () => {
+    window.location.href = "login.html";
+  });
+
+  // LOGOUT CLICK
+  logoutOption.addEventListener("click", () => {
+    localStorage.removeItem("isLoggedIn");
+    alert("Logged out successfully");
+    updateMenu();
+  });
 
 });
 
