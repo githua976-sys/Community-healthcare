@@ -12,7 +12,7 @@ let logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
 
     if (localStorage.getItem("isLoggedIn") === "true") {
-      logoutBtn.style.display = "block"; // simpler than hidden class
+      logoutBtn.style.display = "block"; // sim
     }
 
     logoutBtn.addEventListener("click", function () {

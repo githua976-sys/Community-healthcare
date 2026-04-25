@@ -8,8 +8,6 @@
 
 <body class="flex flex-col min-h-screen">
 
-  
-
 
 <!-- NAVBAR -->
 <nav class="bg-blue-600 p-4 text-white flex justify-around">
@@ -41,6 +39,29 @@
 
 <!-- DOCTORS -->
 <section class="py-16 px-6 flex-grow">
+  <div class="flex justify-end p-4 relative">
+
+  <!-- Account Icon -->
+  <div id="accountIcon" class="cursor-pointer text-2xl">
+    👤
+  </div>
+
+  <!-- Dropdown -->
+  <div id="accountMenu"
+    class="hidden absolute right-4 top-12 bg-white shadow rounded w-40">
+
+    <button id="loginOption"
+      class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+      Login
+    </button>
+
+    <button id="logoutOption"
+      class="block w-full text-left px-4 py-2 hover:bg-gray-100">
+      Logout
+    </button>
+
+  </div>
+</div>
  <div id="doctorContainer" class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
 
     <!-- DOCTOR 1 -->
