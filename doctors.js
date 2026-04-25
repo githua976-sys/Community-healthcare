@@ -12,7 +12,7 @@ let logoutBtn = document.getElementById("logoutBtn");
   if (logoutBtn) {
 
     if (localStorage.getItem("isLoggedIn") === "true") {
-      logoutBtn.style.display = "block"; // sim
+      logoutBtn.style.display = "block"; 
     }
 
     logoutBtn.addEventListener("click", function () {
