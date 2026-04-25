@@ -8,12 +8,18 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     return;
   }
 
-  // SIMPLE LOGIN 
+  // login
   localStorage.setItem("isLoggedIn", "true");
 
   alert("Login successful!");
 
-  // redirect back to appointment
-  window.location.href = "appointment.html";
+  // check if user selected a doctor
+  let selectedDoctor = localStorage.getItem("selectedDoctor");
+
+  if (selectedDoctor) {
+    window.location.href = "appointment.html";
+  } else {
+    window.location.href = "doctors.html"; // or homepage
+  }
 
 });
