@@ -8,7 +8,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     return;
   }
 
-  // SIMPLE LOGIN (for school project)
+  // SIMPLE LOGIN 
   localStorage.setItem("isLoggedIn", "true");
 
   alert("Login successful!");
