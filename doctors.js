@@ -1,4 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
+// PROTECT PAGE 
+if (localStorage.getItem("isLoggedIn") !== "true") {
+  window.location.href = "login.html";
+}
+
+document.addEventListener("DOMContentLoaded", function () { 
+
+  // LOGOUT BUTTON CONTROL 
+let logoutBtn = document.getElementById("logoutBtn");
+
+if (localStorage.getItem("isLoggedIn") === "true") {
+  logoutBtn.classList.remove("hidden");
+}
+
+logoutBtn.addEventListener("click", function () {
+  localStorage.removeItem("isLoggedIn");
+  window.location.href = "login.html";
+});
 
   // OOP CLASS
   class Doctor {
@@ -98,12 +115,10 @@ document.addEventListener("click", function(e) {
     let isLoggedIn = localStorage.getItem("isLoggedIn");
 
     if (isLoggedIn === "true") {
-      window.location.href = "appointment.html";
-    } else {
-      alert("Please log in first!");
-      window.location.href = "login.html";
-    }
+  let doctorName = e.target.getAttribute("data-doctor");
 
-  }
+  localStorage.setItem("selectedDoctor", doctorName);
 
-});
+  window.location.href = "appointment.html";
+    } 
+    
