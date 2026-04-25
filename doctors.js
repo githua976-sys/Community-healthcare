@@ -140,3 +140,4 @@ document.addEventListener("click", function (e) {
     }
   }
 });
+displayDoctors(doctorsList);
