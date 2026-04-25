@@ -5,16 +5,26 @@ if (localStorage.getItem("isLoggedIn") !== "true") {
 
 document.addEventListener("DOMContentLoaded", function () { 
 
-  // LOGOUT BUTTON CONTROL 
 let logoutBtn = document.getElementById("logoutBtn");
 
-if (localStorage.getItem("isLoggedIn") === "true") {
-  logoutBtn.classList.remove("hidden");
-}
+  console.log(logoutBtn); // 👈 CHECK THIS
 
-logoutBtn.addEventListener("click", function () {
-  localStorage.removeItem("isLoggedIn");
-  window.location.href = "login.html";
+  if (logoutBtn) {
+
+    if (localStorage.getItem("isLoggedIn") === "true") {
+      logoutBtn.style.display = "block"; // simpler than hidden class
+    }
+
+    logoutBtn.addEventListener("click", function () {
+      alert("Logging out..."); // 👈 TEST
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    });
+
+  } else {
+    console.log("Logout button NOT found");
+  }
+
 });
 
   // OOP CLASS
@@ -105,8 +115,6 @@ logoutBtn.addEventListener("click", function () {
     });
   });
 
-});
-
 // HANDLE BOOK BUTTON CLICK
 document.addEventListener("click", function(e) {
 
@@ -120,5 +128,9 @@ document.addEventListener("click", function(e) {
   localStorage.setItem("selectedDoctor", doctorName);
 
   window.location.href = "appointment.html";
-    } 
+    } else {
+      alert("Please log in to book an appointment.");
+      window.location.href = "login.html";
+    }
+  }
     
