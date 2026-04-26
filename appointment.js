@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     text.innerText = "No doctor selected";
   }
 
-});document.getElementById("appointmentForm").addEventListener("submit", function (e) {
+});
+document.getElementById("appointmentForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
   let doctor = localStorage.getItem("selectedDoctor");
@@ -31,13 +32,20 @@ document.addEventListener("DOMContentLoaded", function () {
     date: document.querySelector("input[type='date']").value
   };
 
-  localStorage.setItem("appointment", JSON.stringify(appointment));
+  // get existing appointments or create empty array
+  let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+  // add new appointment
+  appointments.push(appointment);
+
+  // save back
+  localStorage.setItem("appointments", JSON.stringify(appointments));
 
   alert("Appointment booked successfully!");
 
-  // clear doctor after booking
+  // clear selected doctor
   localStorage.removeItem("selectedDoctor");
 
-  // go back
-  window.location.href = "doctors.html";
+  // redirect to MY APPOINTMENTS PAGE
+  window.location.href = "my-appointments.html";
 });
