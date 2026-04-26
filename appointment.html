@@ -38,23 +38,34 @@
     <p id="selectedDoctorText" class="text-lg font-semibold text-blue-600 mb-4 text-center"></p>
 
     <!-- Form -->
-   <form id="appointmentForm" class="bg-white p-6 rounded-2xl shadow space-y-4">
-      <input type="text" placeholder="Full Name" class="w-full p-3 border rounded-lg">
-      <input type="tel" placeholder="Phone Number" class="w-full p-3 border rounded-lg">
+    <form id="appointmentForm" class="space-y-4">
 
-      <select class="w-full p-3 border rounded-lg">
-        <option>Select Department</option>
-        <option>General Consultation</option>
-        <option>Pediatrics</option>
-        <option>Surgery</option>
-        <option>Maternal Health</option>
-      </select>
+      <div>
+        <label class="block text-sm font-semibold mb-1">Full Name</label>
+        <input type="text" placeholder="Enter your name"
+          class="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>
+      </div>
 
-      <input type="date" class="w-full p-3 border rounded-lg">
+      <div>
+        <label class="block text-sm font-semibold mb-1">Phone Number</label>
+        <input type="tel" placeholder="Enter phone number"
+          class="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>
+      </div>
 
-      <button class="bg-blue-600 text-white w-full py-3 rounded-lg hover:bg-blue-700 transition">
-        Submit Appointment
+      <div>
+        <label class="block text-sm font-semibold mb-1">Appointment Date</label>
+        <input type="date"
+          class="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+        Book Appointment
       </button>
+
     </form>
 
     <!-- Extra Info -->
