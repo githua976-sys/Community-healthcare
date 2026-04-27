@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Doctor Dashboard</title>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- Top Bar -->
+<div class="bg-blue-700 text-white p-4 flex justify-between items-center shadow">
+  <h1 class="text-2xl font-bold">🏥 Doctor Dashboard</h1>
+
+  <button onclick="logoutUser()"
+    class="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200">
+    Logout
+  </button>
+</div>
+
+<!-- Stats -->
+<div class="p-6 grid md:grid-cols-3 gap-6">
+
+  <div class="bg-white p-6 rounded-xl shadow text-center">
+    <h3 class="text-gray-500">Total Appointments</h3>
+    <p id="totalAppointments" class="text-3xl font-bold text-blue-600">0</p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow text-center">
+    <h3 class="text-gray-500">Today</h3>
+    <p id="todayAppointments" class="text-3xl font-bold text-green-600">0</p>
+  </div>
+
+  <div class="bg-white p-6 rounded-xl shadow text-center">
+    <h3 class="text-gray-500">Pending</h3>
+    <p class="text-3xl font-bold text-yellow-500">All</p>
+  </div>
+
+</div>
+
+<!-- Appointment List -->
+<div class="p-6">
+  <h2 class="text-xl font-bold mb-4">Patient Appointments</h2>
+
+  <div id="appointmentsList" class="grid md:grid-cols-2 gap-6"></div>
+</div>
+
+<script src="doctor-dashboard.js"></script>
+
+</body>
+</html>
