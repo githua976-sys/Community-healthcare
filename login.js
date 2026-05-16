@@ -3,24 +3,34 @@ document.getElementById("loginBtn").addEventListener("click", function () {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
 
-  if (username === "" || password === "") {
+  if (!username || !password) {
     alert("Please fill all fields");
     return;
   }
 
-  // login
-  localStorage.setItem("isLoggedIn", "true");
-  localStorage.setItem("role", savedUser.role); // "doctor" or "patient"
+  // get saved user
+  let savedUser = JSON.parse(localStorage.getItem("user"));
 
-  alert("Login successful!");
+  if (!savedUser) {
+    alert("No registered account found");
+    return;
+  }
 
-  // check if user selected a doctor
-  let selectedDoctor = localStorage.getItem("selectedDoctor");
+  // check credentials
+  if (
+    savedUser.username === username &&
+    savedUser.password === password
+  ) {
 
-  if (selectedDoctor) {
-    window.location.href = "appointment.html";
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("role", savedUser.role);
+
+    alert("Login successful!");
+
+    window.location.href = "index.html";
+
   } else {
-    window.location.href = "doctors.html"; // or homepage
+    alert("Invalid username or password");
   }
 
 });
