@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   let isLoggedIn = localStorage.getItem("isLoggedIn");
+   let role = localStorage.getItem("role");
+
+   if (role !== "doctor") {
+    alert("You are not authorized to view this page");
+    window.location.href = "login.html";
+    return;
+   }
 
   if (isLoggedIn !== "true") {
     alert("Please log in first");

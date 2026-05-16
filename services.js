@@ -1,28 +1,27 @@
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
-  let name = document.querySelector("input[type='text']").value;
-  let email = document.querySelector("input[type='email']").value;
-  let message = document.querySelector("textarea").value;
+  const searchInput = document.getElementById("searchService");
+  const services = document.querySelectorAll(".service");
 
-  // validation
-  if (!name || !email || !message) {
-    alert("Please fill all fields");
-    return;
-  }
+  searchInput.addEventListener("keyup", () => {
 
-  let contactData = {
-    name: name,
-    email: email,
-    message: message
-  };
+    let filter = searchInput.value.toLowerCase();
 
-  // save to localStorage (demo purpose)
-  localStorage.setItem("contactMessage", JSON.stringify(contactData));
+    services.forEach(service => {
 
-  // show success message
-  document.getElementById("successMsg").classList.remove("hidden");
+      let serviceName = service
+        .querySelector(".service-name")
+        .textContent
+        .toLowerCase();
 
-  // clear form
-  document.getElementById("contactForm").reset();
+      if (serviceName.includes(filter)) {
+        service.style.display = "block";
+      } else {
+        service.style.display = "none";
+      }
+
+    });
+
+  });
+
 });

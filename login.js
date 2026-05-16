@@ -10,6 +10,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
 
   // login
   localStorage.setItem("isLoggedIn", "true");
+  localStorage.setItem("role", savedUser.role); // "doctor" or "patient"
 
   alert("Login successful!");
 
