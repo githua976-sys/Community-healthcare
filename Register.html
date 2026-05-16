@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-8 rounded-lg shadow w-96">
+
+    <h2 class="text-3xl font-bold text-center mb-6">
+      Create Account
+    </h2>
+
+    <!-- Username -->
+    <input
+      id="username"
+      type="text"
+      placeholder="Username"
+      class="w-full mb-4 p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+
+    <!-- Email -->
+    <input
+      id="email"
+      type="email"
+      placeholder="Email"
+      class="w-full mb-4 p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+
+    <!-- Password -->
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+      class="w-full mb-4 p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+
+    <!-- Role -->
+    <select
+      id="role"
+      class="w-full mb-4 p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+      <option value="">Select Role</option>
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+    </select>
+
+    <!-- Register Button -->
+    <button
+      id="registerBtn"
+      class="w-full bg-blue-600 hover:bg-blue-700 transition text-white py-3 rounded"
+    >
+      Register
+    </button>
+
+    <!-- Login Link -->
+    <p class="text-center mt-4 text-sm">
+      Already have an account?
+      <a href="login.html" class="text-blue-600 font-semibold">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+  <script src="register.js"></script>
+
+</body>
+</html>
