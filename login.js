@@ -27,7 +27,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
 
     alert("Login successful!");
 
-    window.location.href = "index.html";
+    window.location.href = "patient-dashboard.html";
 
   } else {
     alert("Invalid username or password");
